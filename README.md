@@ -24,7 +24,6 @@ project/
 ├── pyproject.toml           # Poetry configuration (dependencies, scripts, formatting)
 ├── poetry.lock              # Poetry lockfile
 ├── .gitignore               # Files/folders to ignore in version control
-├── main.py                  # (Optional) App entry point
 ├── app/                     # Main application package
 │   ├── __init__.py
 │   ├── assets/              # Static assets (if needed later)
@@ -36,6 +35,7 @@ project/
 │   │   └── model/           # SQLAlchemy ORM models
 │   ├── devtools/            # Developer utilities (seed data etc.)
 │   │   └── todone_dev.db    # Local development database
+│   ├── main.py              # (Optional) App entry point
 │   ├── services/            # Business logic (KPI, sync, notifications)
 │   ├── ui/                  # UI components and screens
 │   └── utils/               # General helper functions
@@ -86,9 +86,7 @@ poetry run isort .
 
 ## ✅ GitHub CI Status
 
-```markdown
 ![CI](https://github.com/AnFrBo/ToDone/actions/workflows/ci.yml/badge.svg)
-```
 
 ---
 
