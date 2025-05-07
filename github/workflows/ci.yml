@@ -1,0 +1,52 @@
+
+✅ **Clear, grouped by domain and purpose**  
+✅ **Perfect for README + GitHub → easy to understand**
+
+---
+
+# ✅ **GitHub Actions → CI/CD Workflow (.github/workflows/ci.yml)**
+
+→ This will run on every push / pull request:
+
+- Install Python + Poetry
+- Install dependencies
+- Run black check (format check → no formatting, just check)
+- Run isort check
+- Run pytest (tests)
+
+```yaml
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install Poetry
+      run: |
+        python -m pip install poetry
+
+    - name: Install dependencies
+      run: |
+        poetry install
+
+    - name: Check code formatting with Black
+      run: |
+        poetry run black --check .
+
+    - name: Check import ordering with isort
+      run: |
+        poetry run isort --check-only .
+
+    - name: Run tests
+      run: |
+        poetry run pytest

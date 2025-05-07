@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "toDone"
+version = "0.0.1"
+description = "App to gamify household chores by tracking tasks, completions, and fun stats."
+authors = ["AnFrBo - https://github.com/AnFrBo"]
+license = "Apache 2.0"
+readme = "README.md"
+packages = [{ include = "app" }]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+sqlalchemy = "^2.0.40"
+black = "^25.1.0"
+isort = "^6.0.1"
+pytest = "^8.3.5"
+
+[tool.poetry.scripts]
+seed = "app.devtools.populate_seed_data:seed_all"
+
+[tool.pytest.ini_options]
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+markers = [
+    "integration: mark as integration test",
+    "unit: mark as unit test",
+] 
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"

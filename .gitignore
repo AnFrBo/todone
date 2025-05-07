@@ -1,0 +1,30 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# SQLite databases (DEV ONLY - comment if you want to version prod dbs)
+*.db
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# VSCode settings
+.vscode/
+
+# Env
+.venv/
+.env
+.env.*
+
+# Mac / Linux / Windows hidden files
+.DS_Store
+Thumbs.db
+
+# Pytest cache
+.pytest_cache/
+
+# Private files
+helpstars.md
