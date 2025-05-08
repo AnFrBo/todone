@@ -1,4 +1,5 @@
-from datetime import datetime, date
+from datetime import date, datetime
+
 
 class Serializer:
     def serialize_to_dict(self):

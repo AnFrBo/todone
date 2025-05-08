@@ -1,9 +1,9 @@
 from datetime import datetime
 
-from app.database.model.user import User
-from app.database.model.task import Task
-from app.database.model.action import Action
 from app.database.db import get_session, init_db
+from app.database.model.action import Action
+from app.database.model.task import Task
+from app.database.model.user import User
 
 
 def seed_users():

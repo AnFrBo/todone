@@ -1,10 +1,11 @@
 from datetime import datetime
 
-from sqlalchemy import Column, Integer, DateTime, ForeignKey
+from sqlalchemy import Column, DateTime, ForeignKey, Integer
 from sqlalchemy.orm import relationship
 
 from app.database.base import Base
 from app.database.mixins.serializer import Serializer
+
 
 class Action(Base, Serializer):
     __tablename__ = "action"

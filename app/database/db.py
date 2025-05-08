@@ -13,11 +13,13 @@ engine = create_engine(DATABASE_URL, echo=True)
 # Session Factory
 SessionLocal = sessionmaker(bind=engine)
 
+
 # Initialize DB (create tables)
 def init_db():
     Base.metadata.drop_all(bind=engine)
     Base.metadata.create_all(bind=engine)
     print(Base.metadata.tables.keys())
+
 
 # Session Context Manager (recommended for clean handling)
 @contextmanager

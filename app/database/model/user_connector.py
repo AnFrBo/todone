@@ -1,9 +1,10 @@
 from datetime import datetime
 
-from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
+from sqlalchemy import Column, DateTime, ForeignKey, Integer, String
 
 from app.database.base import Base
 from app.database.mixins.serializer import Serializer
+
 
 class UserConnector(Base, Serializer):
     __tablename__ = "user_connector"
@@ -17,4 +18,3 @@ class UserConnector(Base, Serializer):
     # for logging
     def __repr__(self):
         return f"<UserConnector(user_connector_uid={self.user_connector_uid}, user_id_1={self.user_id_1}, user_id_2={self.user_id_2})>"
-

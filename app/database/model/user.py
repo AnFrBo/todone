@@ -1,10 +1,11 @@
 from datetime import datetime
 
-from sqlalchemy import Column, Integer, String, Date, DateTime
+from sqlalchemy import Column, Date, DateTime, Integer, String
 from sqlalchemy.orm import relationship
 
 from app.database.base import Base
 from app.database.mixins.serializer import Serializer
+
 
 class User(Base, Serializer):
     __tablename__ = "user"
@@ -20,4 +21,3 @@ class User(Base, Serializer):
     # for logging
     def __repr__(self):
         return f"<User(user_uid={self.user_uid}, user_name='{self.user_name}')>"
-

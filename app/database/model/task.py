@@ -1,10 +1,11 @@
 from datetime import datetime
 
-from sqlalchemy import Column, Integer, String, DateTime
+from sqlalchemy import Column, DateTime, Integer, String
 from sqlalchemy.orm import relationship
 
 from app.database.base import Base
 from app.database.mixins.serializer import Serializer
+
 
 class Task(Base, Serializer):
     __tablename__ = "task"
@@ -12,7 +13,7 @@ class Task(Base, Serializer):
     task_uid = Column(Integer, primary_key=True)
     title = Column(String, nullable=False)
     description = Column(String, nullable=True)
-    solution_time = Column(Integer, nullable=False) # in minutes
+    solution_time = Column(Integer, nullable=False)  # in minutes
     color = Column(String, nullable=True)
     created_at = Column(DateTime, default=datetime.now, nullable=False)
 
@@ -21,4 +22,3 @@ class Task(Base, Serializer):
     # for logging
     def __repr__(self):
         return f"<Task(task_uid={self.task_uid}, title='{self.title}')>"
-

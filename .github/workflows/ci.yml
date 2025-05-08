@@ -1,20 +1,3 @@
-
-✅ **Clear, grouped by domain and purpose**  
-✅ **Perfect for README + GitHub → easy to understand**
-
----
-
-# ✅ **GitHub Actions → CI/CD Workflow (.github/workflows/ci.yml)**
-
-→ This will run on every push / pull request:
-
-- Install Python + Poetry
-- Install dependencies
-- Run black check (format check → no formatting, just check)
-- Run isort check
-- Run pytest (tests)
-
-```yaml
 name: CI
 
 on: [push, pull_request]
